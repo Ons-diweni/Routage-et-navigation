@@ -1,0 +1,21 @@
+<ul>
+    <div *ngFor="let i of list">
+        <div *ngIf="i.idFacture ==id ">
+            <div *ngIf="i.active==true ; else contenupasbon ">
+                <li> idFacture : {{i.idFacture}} </li>
+                <li> montantFacture : {{i.montantFacture}} </li>
+                <li> montantRemise : {{i.montantRemise}} </li>
+                <li> dateFacture : {{i.dateFacture}} </li>
+                <li> active : {{i.active}} </li>
+            </div>
+        </div>
+        <div>
+            <ng-template #contenupasbon>
+                <h2> Impossible de visualiser les détails de la facture </h2>
+            </ng-template>
+        </div>
+    </div>
+
+
+    <button class="btn btn-primary" routerLink="/maininvoiceManagement"> Retour </button>
+</ul>
